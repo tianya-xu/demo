@@ -1,0 +1,310 @@
+/* 
+   页面高度是相对于父元素而言的
+   所以想改侧边栏高度要去页面和body去改
+ */
+ul{
+	list-style: none;
+	padding-left: 0;
+}
+#sidebar{
+	width: 35px;
+	background-color: #e1e1e1;
+	padding-top: 200px;
+    position: fixed;   
+    top: 0;
+    height: 100%; 
+	/* height: 100vh; */ 
+	z-index: 100;
+
+}
+.item{
+	font-size: 12px;
+	font-family: "microsoft yahei";
+	text-align: center;
+    margin-top: 5px;
+	cursor: pointer;
+}
+#closebar{
+	position: absolute;
+	bottom: 30px;
+	width: 30px;
+	text-align: center;
+	cursor: pointer;
+	
+}
+.nav-content{
+	width: 200px;
+ 	/* position:fixed;  //不在页面的流中 ie6不支持 我无效
+	min-height:100% */
+    position:fixed;
+	top: 0;
+	height: 100%;
+	background-color: #e1e1e1;
+	border: 1px solid black;            /* 可隐藏的侧边栏 */
+	z-index:99;
+	opacity: 0;       /* 透明度因为要设置动画效果*/
+   /* float: right;
+    cursor: pointer;
+    padding-top: 5px;
+    padding-right: 5px; */
+}
+.nav-con-close{
+	position: absolute;
+	top:5px;
+	right: 5px; 
+	cursor: pointer;
+}
+.sidebar-move-left{
+	-webkit-animation-name:sml;
+	-moz-animation-name:sml;
+	-o-animation-name:sml;
+	animation-name: sml;
+	-webkit-animation-duration:1s ;
+	-moz-animation-duration:1s ;
+	-o-animation-duration: 1s;               /* 持续时间*/
+	animation-duration:1s ;		
+	-webkit-animation-iteration-count:1 ;    /* //执行次数 */
+	-moz-animation-iteration-count:1 ;  
+	-o-animation-iteration-count:1 ;  
+	animation-iteration-count:1 ;  
+	-webkit-animation-fill-mode:forwards;   /* //动画不播放时应用的元素 */
+	-moz-animation-fill-mode:forwards;   
+	-o-animation-fill-mode:forwards;   
+	animation-fill-mode:forwards;   
+	}
+@-webkit-keyframes sml{
+		from{
+			
+		}
+		to{
+			transform:translateX(-120px) ;   
+		}
+	}
+@keyframes sml{          /* 关键帧*/
+	from{
+		
+	}
+	to{
+		transform:translateX(-120px) ;     
+	}
+}
+.closebar-move-right{
+	-webkit-animation-name:cmr;
+	-moz-animation-name:cmr;
+	-o-animation-name:cmr;
+	animation-name: cmr;
+	-webkit-animation-duration:1s ;
+	-moz-animation-duration:1s ;
+	-o-animation-duration: 1s;               /* 持续时间*/
+	animation-duration:1s ;	
+	-webkit-animation-iteration-count:1 ;    /* //执行次数 */
+	-moz-animation-iteration-count:1 ;  
+	-o-animation-iteration-count:1 ;  
+	animation-iteration-count:1 ;  
+	-webkit-animation-fill-mode:forwards;   /* //动画不播放时应用的元素 */
+	-moz-animation-fill-mode:forwards;   
+	-o-animation-fill-mode:forwards;   
+	animation-fill-mode:forwards;  
+}
+@-webkit-keyframes cmr{
+	from{
+		
+	}
+	to{
+		-webkit-transform: translateX(160px) rotate(405deg) scale(1.5);
+		transform:translateX(160px) rotate(405deg) scale(1.5);     
+	}
+}
+@keyframes cmr{          /* 关键帧*/
+	from{
+		
+	}
+	to{
+		-webkit-transform: translateX(160px) rotate(405deg) scale(1.5);
+		transform:translateX(160px) rotate(405deg) scale(1.5);     
+	}
+}
+
+
+.sidebar-move-right{
+	-webkit-animation-name:smr;
+	-moz-animation-name:smr;
+	-o-animation-name:smr;
+	animation-name: smr;
+	-webkit-animation-duration:1s ;
+	-moz-animation-duration:1s ;
+	-o-animation-duration: 1s;               /* 持续时间*/
+	animation-duration:1s ;	
+	-webkit-animation-iteration-count:1 ;    /* //执行次数 */
+	-moz-animation-iteration-count:1 ;  
+	-o-animation-iteration-count:1 ;  
+	animation-iteration-count:1 ;  
+	-webkit-animation-fill-mode:forwards;   /* //动画不播放时应用的元素 */
+	-moz-animation-fill-mode:forwards;   
+	-o-animation-fill-mode:forwards;   
+	animation-fill-mode:forwards;  
+}
+@keyframes smr{
+	from{}
+	to{
+		transform: translateX(120px); //向右移动
+	}
+}
+@-webkit-keyframes smr{
+	from{}
+	to{
+		transform: translateX(120px);    	
+	}
+}
+.closebar-move-left{
+	-webkit-animation-name:cml;
+	-moz-animation-name:cml;
+	-o-animation-name:cml;
+	animation-name: cml;
+	-webkit-animation-duration:1s ;
+	-moz-animation-duration:1s ;
+	-o-animation-duration: 1s;               /* 持续时间*/
+	animation-duration:1s ;	
+	-webkit-animation-iteration-count:1 ;    /* //执行次数 */
+	-moz-animation-iteration-count:1 ;  
+	-o-animation-iteration-count:1 ;  
+	animation-iteration-count:1 ;  
+	-webkit-animation-fill-mode:forwards;   /* //动画不播放时应用的元素 */
+	-moz-animation-fill-mode:forwards;   
+	-o-animation-fill-mode:forwards;   
+	animation-fill-mode:forwards;  
+	
+}
+@-webkit-keyframes cml{
+	from{
+		
+	}
+	to{
+		-webkit-transform: translateX(-160px) rotate(-405deg) scale(1);
+		transform:translateX(-160px) rotate(-405deg) scale(1);     
+	}
+}
+@keyframes cml{          /* 关键帧*/
+	from{
+		transform: scale(1.5);
+	}
+	to{
+		-webkit-transform: translateX(-160px) rotate(-405deg) scale(1);
+		transform:translateX(-160px) rotate(-405deg) scale(1);     
+	}
+}
+.menuContentEl-move-right{
+	-webkit-animation-name:mmr;
+	-moz-animation-name:mmr;
+	-o-animation-name:mmr;
+	animation-name: mmr;
+	-webkit-animation-duration:1s;
+	-moz-animation-duration:1s ;
+	-o-animation-duration: 1s;               /* 持续时间*/
+	animation-duration:1s ;	
+	-webkit-animation-iteration-count:1 ;    /* //执行次数 */
+	-moz-animation-iteration-count:1 ;  
+	-o-animation-iteration-count:1 ;  
+	animation-iteration-count:1 ;  
+	-webkit-animation-fill-mode:forwards;   /* //动画不播放时应用的元素 */
+	-moz-animation-fill-mode:forwards;   
+	-o-animation-fill-mode:forwards;   
+	animation-fill-mode:forwards;  
+}
+@keyframes mmr{
+	from{
+		opacity: 0;
+	}
+	to{
+		opacity: 1;
+		transform:translateX(120px);
+		-webkit-transform:translateX(120px);
+	}
+}
+@-webkit-keyframes mmr{
+	from{
+		opacity: 0;
+	}
+	to{
+		opacity: 1;
+		transform:translateX(120px);
+		-webkit-transform:translateX(120px);     
+	}
+}
+.menuContentEl-move-left{
+	-webkit-animation-name:mml;
+	-moz-animation-name:mml;
+	-o-animation-name:mml;
+	animation-name: mml;
+	-webkit-animation-duration:.5s;
+	-moz-animation-duration:.5s ;
+	-o-animation-duration: .5s;               /* 持续时间*/
+	animation-duration:.5s ;	
+	-webkit-animation-iteration-count:1 ;    /* //执行次数 */
+	-moz-animation-iteration-count:1 ;  
+	-o-animation-iteration-count:1 ;  
+	animation-iteration-count:1 ;  
+	-webkit-animation-fill-mode:forwards;   /* //动画不播放时应用的元素 */
+	-moz-animation-fill-mode:forwards;   
+	-o-animation-fill-mode:forwards;   
+	animation-fill-mode:forwards;  	
+}
+@keyframes mml{
+	from{
+		opacity: 1;
+	}
+	to{
+		opacity: 0;
+		transform:translateX(-120px);
+		-webkit-transform:translateX(-120px);
+	}
+}
+@-webkit-keyframes mml{
+	from{
+		opacity: 1;
+	}
+	to{
+		opacity: 0;
+		transform:translateX(-120px);
+		-webkit-transform:translateX(-120px);     
+	}
+}
+.menuContentEl-move-up{
+	-webkit-animation-name:mmu;
+	-moz-animation-name:mmu;
+	-o-animation-name:mmu;
+	animation-name: mmu;
+	-webkit-animation-duration:1s;
+	-moz-animation-duration:1s ;
+	-o-animation-duration: 1s;               /* 持续时间*/
+	animation-duration:1s ;	
+	-webkit-animation-iteration-count:1 ;    /* //执行次数 */
+	-moz-animation-iteration-count:1 ;  
+	-o-animation-iteration-count:1 ;  
+	animation-iteration-count:1 ;  
+	-webkit-animation-fill-mode:forwards;   /* //动画不播放时应用的元素 */
+	-moz-animation-fill-mode:forwards;   
+	-o-animation-fill-mode:forwards;   
+	animation-fill-mode:forwards;  	
+	
+}
+@keyframes mmu{
+	from{
+		opacity: 0;
+	}
+	to{
+		opacity: 1;
+		transform:translateY(-250px);
+		-webkit-transform:translateY(-250px);
+	}
+}
+@-webkit-keyframes mmu{
+	from{
+		opacity: 0;
+	}
+	to{
+		opacity: 1;
+		transform:translateY(-250px);
+		-webkit-transform:translateY(-250px);  
+	}
+}
